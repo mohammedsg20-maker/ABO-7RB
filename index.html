@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABO 7RB | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="white-screen-overlay" id="white-screen">
+        <div class="top-left-folder" id="folder-trigger" onclick="startSystemUnzip()">
+            <i class="fa-solid fa-folder-closed" id="folder-icon"></i>
+            <span class="folder-label">اضغط لفتح الملف</span>
+        </div>
+        
+        <div class="unzip-loader-box" id="loader-box">
+            <h3 id="loader-status">جاري استخراج ملفات الموقع...</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="bar-fill"></div>
+            </div>
+            <div class="percentage" id="percent-text">0%</div>
+        </div>
+    </div>
+
+    <div class="bg-stars"></div>
+    <div class="glow-orb" id="orb-1"></div>
+    <div class="glow-orb" id="orb-2"></div>
+
+    <div class="window-wrapper">
+        <div class="window-top-bar">
+            <div class="window-actions">
+                <span class="action-circle close"></span>
+                <span class="action-circle minimize"></span>
+                <span class="action-circle maximize"></span>
+            </div>
+            <div class="window-title-text">~:aboharbi@portfolio</div>
+            <div class="system-time" id="live-clock">00:00:00</div>
+        </div>
+
+        <div class="nav-bar">
+            <button class="nav-tab active" onclick="switchTab(event, 'about-tab')">
+                <i class="fa-solid fa-user-astronaut"></i> من أنا
+            </button>
+            <button class="nav-tab" onclick="switchTab(event, 'achieve-tab')">
+                <i class="fa-solid fa-trophy"></i> سجل الإنجازات
+            </button>
+        </div>
+
+        <div class="window-content">
+            
+           <div id="about-tab" class="tab-panel active">
+        <div class="profile-section">
+            <div class="avatar-wrapper">
+                <img src="assets/harry.png" alt="Harry Potter" class="profile-img">
+                <div class="status-indicator online"></div>
+            </div>
+            <div class="profile-info">
+                <div class="name-badge">
+                    <h1 class="main-name"></h1>ABO 7RB ꐞ</h1>
+                    <span class="live-status-tag">Offline</span>
+                </div>
+                <p class="subtitle"><i class="fa-solid fa-code"></i> 
+            </div>
+        </div>
+
+        <div class="bio-box">
+            <div class="bio-header"><i class="fa-solid fa-terminal"></i> نبذة تعريفية</div>
+            <p>مرحباً بك في زوايتي الخاصة في هذا الفضاء الرقمي! أنا محمد الحربي (أبو حرب)، شغوف جداً بتسخير سحر الأكواد لتطوير التطبيقات وتصميم واجهات الويب الفريدة. لا أكتفي بالبرمجية التقليدية، بل أعشق التحديات الرقمية وبناء وتأسيس العوالم الإستراتيجية.</p>
+        </div>
+               <!-- بداية منطقة الأزرار -->
+<!-- بداية منطقة الأزرار -->
+    <div class="social-links-container" style="display: flex; gap: 10px; justify-content: center; margin: 20px 0;">
+
+        <!-- زر الانستقرام -->
+        <a href="https://www.instagram.com/1i8xre" target="_blank" style="text-decoration: none;">
+            <div class="instagram-btn" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); padding: 10px 20px; border-radius: 10px; color: white; text-align: center; cursor: pointer;">
+                <i class="fa-brands fa-instagram"></i>
+                <div style="font-weight: bold;">Instagram</div>
+            </div>
+        </a>
+
+        <!-- زر السناب -->
+        <a href="https://www.snapchat.com/add/xs_vvw" target="_blank" style="text-decoration: none;">
+            <div class="snapchat-btn" style="background-color: #fffc00; padding: 10px 20px; border-radius: 10px; color: black; text-align: center; cursor: pointer;">
+                <i class="fa-brands fa-snapchat"></i>
+                <div style="font-weight: bold;">Snapchat</div>
+            </div>
+        </a>
+
+        <!-- زر الديسكورد -->
+        <a href="#" target="_blank" style="text-decoration: none;">
+            <div class="discord-btn" style="background-color: #5865F2; padding: 10px 20px; border-radius: 10px; color: white; text-align: center; cursor: pointer;">
+                <i class="fa-brands fa-discord"></i>
+                <div style="font-weight: bold;">Discord</div>
+            </div>
+        </a>
+
+    </div>
+    <!-- نهاية منطقة الأزرار -->
+<!-- نهاية منطقة الأزرار -->
+
+                <div class="advanced-player" style="direction: ltr !important;">
+                    <div class="player-meta">
+                        <div class="disc-zone"><i class="fa-solid fa-compact-disc" id="disc-icon"></i></div>
+                        <div class="track-info">
+                            <h3>The Night We Met 🎵</h3>
+                            <p>Lord Huron</p>
+                        </div>
+                        <div class="music-visualizer" id="visualizer">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <div class="progress-row">
+                            <span class="time-lbl" id="curr-time">0:00</span>
+                            <div class="slider-bg" id="progress-timeline" onclick="seekAudio(event)">
+                                <div class="slider-fill" id="track-fill"></div>
+                            </div>
+                            <span class="time-lbl" id="dur-time">0:00</span>
+                        </div>
+                        <div class="control-actions-row">
+                            <div></div>
+                            <button class="action-btn play-main" id="play-trigger" onclick="toggleAudio()">
+                                <i class="fa-solid fa-play" id="play-icon"></i>
+                            </button>
+                            <div class="volume-container">
+                                <i class="fa-solid fa-volume-high" id="vol-icon"></i>
+                                <input type="range" class="vol-range" id="volume-slider" min="0" max="1" step="0.05" value="0.5" oninput="changeVolume(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <audio id="bg-audio" src="music.mp3"></audio>
+            </div>
+
+            <div id="achieve-tab" class="tab-panel">
+                <h2 class="section-title"><i class="fa-solid fa-scroll"></i> الإنجازات والمشاريع المتميزة</h2>
+                <div class="achievements-grid">
+                    <div class="achieve-card">
+                        <div class="achieve-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>فزت في بطولة روبوت VEX IQ</h3>
+                        <p>المشاركة المتميزة وتحقيق الفوز في منافسات بطولة الروبوتات الذكية وتصميم وبرمجة حركات الروبوت بدقة وكفاءة عالية.</p>
+                        <span class="tech-tag">Hardware & Robotics</span>
+                    </div>
+                    <div class="achieve-card">
+                        <div class="achieve-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>دورة في الذكاء الاصطناعي</h3>
+                        <p>اجتياز دورة تدريبية متخصصة ومكثفة في فهم أساسيات ذكاء الآلة، وتعلم كيفية توظيف التقنيات الذكية الحديثة.</p>
+                        <span class="tech-tag">Artificial Intelligence</span>
+                    </div>
+                    <div class="achieve-card">
+                        <div class="achieve-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>تطوير موقع الروتين الشخصي</h3>
+                        <p>بناء وتصميم موقع متكامل محلي لتتبع العادات اليومية وتنظيم الوقت باستخدام لغات الويب الأساسية بنجاح.</p>
+                        <span class="tech-tag">HTML / CSS / JS</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function startSystemUnzip() {
+            const folderIcon = document.getElementById("folder-icon");
+            const loaderBox = document.getElementById("loader-box");
+            const barFill = document.getElementById("bar-fill");
+            const percentText = document.getElementById("percent-text");
+            const whiteScreen = document.getElementById("white-screen");
+
+            folderIcon.className = "fa-solid fa-folder-open";
+            loaderBox.classList.add("visible");
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 6) + 2;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    barFill.style.width = "100%";
+                    percentText.innerText = "100%";
+                    document.getElementById("loader-status").innerText = "تم الفتح بنجاح!";
+                    setTimeout(() => {
+                        whiteScreen.style.opacity = "0";
+                        setTimeout(() => { whiteScreen.style.display = "none"; }, 500);
+                    }, 400);
+                } else {
+                    barFill.style.width = progress + "%";
+                    percentText.innerText = progress + "%";
+                }
+            }, 30);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById("live-clock").innerText = now.toTimeString().split(' ')[0];
+            }, 1000);
+        });
+
+        function switchTab(evt, tabId) {
+            const panels = document.getElementsByClassName("tab-panel");
+            for (let i = 0; i < panels.length; i++) panels[i].classList.remove("active");
+            const tabs = document.getElementsByClassName("nav-tab");
+            for (let i = 0; i < tabs.length; i++) tabs[i].classList.remove("active");
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        const audio = document.getElementById("bg-audio");
+        const playIcon = document.getElementById("play-icon");
+        const disc = document.getElementById("disc-icon");
+        const visualizer = document.getElementById("visualizer");
+        const trackFill = document.getElementById("track-fill");
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playIcon.className = "fa-solid fa-pause";
+                    disc.classList.add("spinning");
+                    visualizer.classList.add("playing");
+                }).catch(e => {
+                    console.log("Play error:", e);
+                });
+            } else {
+                audio.pause();
+                playIcon.className = "fa-solid fa-play";
+                disc.classList.remove("spinning");
+                visualizer.classList.remove("playing");
+            }
+        }
+
+        audio.ontimeupdate = () => {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            if(!isNaN(pct)) trackFill.style.width = pct + "%";
+            let curM = Math.floor(audio.currentTime / 60);
+            let curS = Math.floor(audio.currentTime % 60);
+            if(curS < 10) curS = "0" + curS;
+            document.getElementById("curr-time").innerText = `${curM}:${curS}`;
+        };
+
+        audio.onloadedmetadata = () => {
+            let durM = Math.floor(audio.duration / 60);
+            let durS = Math.floor(audio.duration % 60);
+            if(durS < 10) durS = "0" + durS;
+            document.getElementById("dur-time").innerText = `${durM}:${durS}`;
+        };
+
+        function changeVolume(val) {
+            audio.volume = val;
+        }
+
+        function seekAudio(e) {
+            const rect = document.getElementById("progress-timeline").getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+    </script>
+</body>
+</html>
